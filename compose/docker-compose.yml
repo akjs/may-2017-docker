@@ -1,0 +1,20 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  simple: # name of the first service
+    build: ../simple-node # specify the directory of the Dockerfile
+    ports:
+      - "4589:4589" # specify port forwarding
+
+  express: #name of the second service
+    build: ../node-server # specify the directory of the Dockerfile
+    ports:
+      - "3232:3232" #specify ports forwarding
+    links:
+      - database # link this service to the database service
+
+  database: # name of the third service
+    image: mongo # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forwarding

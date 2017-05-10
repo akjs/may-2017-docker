@@ -1,0 +1,10 @@
+{
+  "session": {
+    "secret": "secret session key",
+    "resave": true,
+    "saveUninitialized": true,
+    "cookie": {
+      "secure": true
+    }
+  }
+}
